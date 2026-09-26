@@ -1,4 +1,5 @@
 import { isAdmin } from "@/lib/auth";
+import { hasBlob } from "@/lib/blob";
 import AdminPanel from "@/components/AdminPanel";
 import AdminLogin from "@/components/AdminLogin";
 
@@ -20,7 +21,7 @@ export default async function AdminPage() {
       </header>
       <main className="wrap" style={{ padding: "24px 16px 56px" }}>
         {ok ? (
-          <AdminPanel blobReady={!!process.env.BLOB_READ_WRITE_TOKEN} />
+          <AdminPanel blobReady={hasBlob()} />
         ) : (
           <AdminLogin configured={!!process.env.ADMIN_PASSWORD} />
         )}

@@ -1,24 +1,20 @@
 import { NextResponse } from "next/server";
-import { handleUpload } from "@vercel/blob/client";
 import { isAdmin } from "@/lib/auth";
+import { hasBlob, putBlob } from "@/lib/blob";
 
 export async function POST(req) {
-  const body = await req.json();
-  try {
-    const result = await handleUpload({
-      body,
-      request: req,
-      onBeforeGenerateToken: async () => {
-        if (!(await isAdmin())) throw new Error("Unauthorized");
-        return {
-          allowedContentTypes: ["image/png", "image/webp"],
-          maximumSizeInBytes: 20 * 1024 * 1024,
-          addRandomSuffix: true,
-        };
-      },
-    });
-    return NextResponse.json(result);
-  } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 400 });
+  if (!(await isAdmin())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!hasBlob()) return NextResponse.json({ error: "Storage not connected" }, { status: 500 });
+  const form = await req.formData();
+  const file = form.get("file");
+  if (!file || typeof file === "string") return NextResponse.json({ error: "No file" }, { status: 400 });
+  if (!/^image\/(png|webp)$/.test(file.type)) {
+    return NextResponse.json({ error: "Frame must be PNG or WebP" }, { status: 400 });
   }
+  const ext = file.type === "image/webp" ? "webp" : "png";
+  const blob = await putBlob(`frames/frame.${ext}`, file, {
+    contentType: file.type,
+    addRandomSuffix: true,
+  });
+  return NextResponse.json({ id: blob.pathname, url: `/api/file/${blob.pathname}` });
 }

@@ -16,14 +16,8 @@ function loadImage(src, cors) {
   });
 }
 
-async function loadFrame(url) {
-  if (!url.startsWith("http")) return loadImage(url, false);
-  try {
-    return await loadImage(url, true);
-  } catch {
-    // Fall back to same-origin proxy if the storage host blocks CORS.
-    return loadImage(`/api/img?url=${encodeURIComponent(url)}`, false);
-  }
+function loadFrame(url) {
+  return loadImage(url, url.startsWith("http"));
 }
 
 async function copyText(text) {

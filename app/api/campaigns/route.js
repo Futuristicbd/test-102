@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { del } from "@vercel/blob";
+import { hasBlob, del } from "@/lib/blob";
 import { isAdmin } from "@/lib/auth";
-import { getCampaign, listCampaigns, saveCampaign, deleteCampaign, slugify, DEMO } from "@/lib/campaigns";
+import { getCampaign, listCampaigns, saveCampaign, deleteCampaign, framePaths, slugify, DEMO } from "@/lib/campaigns";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +18,7 @@ export async function GET() {
 
 export async function POST(req) {
   if (!(await isAdmin())) return deny();
-  if (!process.env.BLOB_READ_WRITE_TOKEN) return noBlob();
+  if (!hasBlob()) return noBlob();
   const body = await req.json();
   const slug = slugify(body.slug || body.title);
   if (!slug) return NextResponse.json({ error: "Title/slug is required" }, { status: 400 });
@@ -40,8 +40,8 @@ export async function POST(req) {
   await saveCampaign(campaign);
 
   // Remove frame files that were dropped during an edit.
-  const keep = new Set(frames.map((f) => f.url));
-  const removed = (old?.frames || []).map((f) => f.url).filter((u) => u.startsWith("http") && !keep.has(u));
+  const keep = new Set(frames.map((f) => f.id));
+  const removed = framePaths(old?.frames).filter((id) => !keep.has(id));
   if (removed.length) await del(removed).catch(() => {});
 
   return NextResponse.json(campaign);
@@ -49,7 +49,7 @@ export async function POST(req) {
 
 export async function DELETE(req) {
   if (!(await isAdmin())) return deny();
-  if (!process.env.BLOB_READ_WRITE_TOKEN) return noBlob();
+  if (!hasBlob()) return noBlob();
   const slug = new URL(req.url).searchParams.get("slug");
   if (!slug) return NextResponse.json({ error: "slug required" }, { status: 400 });
   await deleteCampaign(slug);

@@ -1,7 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { upload } from "@vercel/blob/client";
+
+const MAX_BYTES = 4 * 1024 * 1024; // Vercel request limit is 4.5 MB
+
+// Shrink big frames in the browser (keeps transparency) so they fit the upload limit.
+async function shrink(file) {
+  if (file.size <= MAX_BYTES) return file;
+  const img = await createImageBitmap(file);
+  for (const side of [2160, 1620, 1080]) {
+    const k = Math.min(1, side / Math.max(img.width, img.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(img.width * k);
+    c.height = Math.round(img.height * k);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    const b = await new Promise((r) => c.toBlob(r, "image/webp", 0.92));
+    if (b && b.size <= MAX_BYTES) return new File([b], "frame.webp", { type: "image/webp" });
+  }
+  throw new Error("Image is too large, please use a smaller PNG");
+}
 
 const EMPTY = { isNew: true, title: "", slug: "", description: "", captions: [""], frames: [] };
 
@@ -36,11 +53,12 @@ export default function AdminPanel({ blobReady }) {
       }
       setBusy(`Uploading ${file.name}…`);
       try {
-        const blob = await upload(`frames/${file.name}`, file, {
-          access: "public",
-          handleUploadUrl: "/api/upload",
-        });
-        setForm((f) => ({ ...f, frames: [...f.frames, { id: blob.pathname, url: blob.url }] }));
+        const fd = new FormData();
+        fd.append("file", await shrink(file));
+        const r = await fetch("/api/upload", { method: "POST", body: fd });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(data.error || r.statusText);
+        setForm((f) => ({ ...f, frames: [...f.frames, data] }));
       } catch (ex) {
         setErr("Upload failed: " + ex.message);
       }

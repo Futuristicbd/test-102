@@ -10,18 +10,18 @@ A simple Twibbon-style frame platform (Next.js + Vercel Blob).
 
 1. Import this GitHub repo in Vercel (framework: Next.js, no settings needed).
 2. Project → **Settings → Environment Variables** → add `ADMIN_PASSWORD` (your admin password).
-3. Project → **Storage → Create → Blob** → connect it to the project (this adds `BLOB_READ_WRITE_TOKEN`), then **Redeploy**.
+3. Project → **Storage → Create → Blob** → connect it to the project (adds `BLOB_STORE_ID` or `BLOB_READ_WRITE_TOKEN`; public or private store both work), then **Redeploy**.
 
 Then open `https://<your-app>.vercel.app/admin`, log in, create a campaign and share the link.
 
 ## Frame tips
 
-Upload a **square PNG (1080×1080)** where the photo area is **transparent**. The user photo is drawn behind the frame.
+Upload a **square PNG (1080×1080)** where the photo area is **transparent**. The user photo is drawn behind the frame. Files over 4 MB are auto-compressed to WebP in the browser before upload.
 
 ## Local dev
 
 ```bash
 npm install
-cp .env.example .env.local   # set ADMIN_PASSWORD and BLOB_READ_WRITE_TOKEN
+cp .env.example .env.local   # set ADMIN_PASSWORD and BLOB_READ_WRITE_TOKEN (optional: without it only the demo frame works)
 npm run dev
 ```
