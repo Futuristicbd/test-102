@@ -43,6 +43,7 @@ export function photo(p, { cls = '', eager = false, sizes = '100vw' } = {}) {
   const local = p.src ? esc(p.src) : '';
   const remote = p.remote ? safeURL(p.remote) : '';
   const attrs = `alt="${esc(p.alt)}" ${eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async" sizes="${sizes}"`;
+  if (local && p.srcset) return `<img class="${cls}" src="${local}" srcset="${esc(p.srcset)}" width="${p.width}" height="${p.height}" ${attrs}>`;
   if (local) return `<img class="${cls}" src="${local}" ${remote ? `data-upgrade="${remote}"` : ''} width="480" height="270" ${attrs}>`;
   return `<img class="${cls}" src="${remote}" data-remote-only width="1280" height="720" ${attrs}>`;
 }
@@ -61,6 +62,11 @@ export function hydratePhotos(root = document) {
     if (img.complete && img.naturalWidth === 0) hide();
     img.addEventListener('error', hide, { once: true });
   }
+}
+
+/** Full-bleed header image with an instant blurred placeholder behind it. */
+export function heroMedia(p) {
+  return `<div class="hero-media" style="background-image:url('${p.placeholder}')">${photo(p, { cls: 'hero-img', eager: true, sizes: '100vw' })}</div>`;
 }
 
 export function credit(p) {

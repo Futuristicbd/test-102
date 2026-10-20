@@ -1,10 +1,10 @@
 // University list (#universities) and profile (#university/<id>).
 
 import { UNIVERSITIES, ADMISSION_UPDATES, CHECKLIST, CONTENT_UPDATED } from '../../../data/universities.js';
-import { CU_PHOTOS } from '../../../data/site.js';
+import { CU_PHOTOS, CU_HERO } from '../../../data/site.js';
 import { esc, bn, bnDate, ext, safeURL, toast } from '../lib/dom.js';
 import { state, save, toggleSaved } from '../lib/store.js';
-import { pageHead, uniCard, photo, credit, hydratePhotos, empty } from '../components.js';
+import { pageHead, uniCard, photo, credit, heroMedia, hydratePhotos, empty } from '../components.js';
 
 let typeFilter = 'all';
 
@@ -88,20 +88,20 @@ function details(u) {
 function cuPage(u) {
   const story = u.campusStory;
   return `<section class="hero hero-sm">
-      <div class="hero-media">${photo(CU_PHOTOS[0], { cls: 'hero-img', eager: true })}</div>
+      ${heroMedia(CU_HERO)}
       <div class="container hero-inner">
         <nav class="crumbs light"><a href="#home">হোম</a> / <a href="#universities">বিশ্ববিদ্যালয়</a> / CU</nav>
         <span class="eyebrow light">তোমার পরের ঠিকানা</span>
         <h1>পাহাড়ের পাশে,<br>নতুন জীবনের শুরু।</h1>
         <p>${esc(u.name)} · <span lang="en">${esc(u.english)}</span></p>
       </div>
-      <span class="hero-credit">${credit(CU_PHOTOS[0])}</span>
+      <span class="hero-credit">${credit(CU_HERO)}</span>
     </section>
     <div class="container">
       <div class="cu-facts lifted">${story.facts.map(([h, t]) => `<div><small lang="en">${esc(h)}</small><b>${esc(t)}</b></div>`).join('')}</div>
       ${links(u)}
       <p class="lead">${esc(story.intro)}</p>
-      <div class="gallery" tabindex="0" aria-label="চবি ছবির গ্যালারি">${CU_PHOTOS.slice(1).map(p => `<figure>${photo(p, { sizes: '(min-width:900px) 30vw, 80vw' })}<figcaption>${esc(p.caption)} ${credit(p)}</figcaption></figure>`).join('')}</div>
+      <div class="gallery" tabindex="0" aria-label="চবি ছবির গ্যালারি">${CU_PHOTOS.map(p => `<figure>${photo(p, { sizes: '(min-width:900px) 30vw, 80vw' })}<figcaption>${esc(p.caption)} ${credit(p)}</figcaption></figure>`).join('')}</div>
       <div class="story">${story.sections
         .map(([label, h, t], i) => `<section class="story-block"><span class="eyebrow">${esc(label)}</span><h2>${esc(h)}</h2><p>${esc(t)}</p>${i === 2 ? `<div class="subject-grid">${story.areas.map(([n, s]) => `<article><h3 lang="en">${esc(n)}</h3><p lang="en">${esc(s)}</p></article>`).join('')}</div><p class="muted small">কয়েকটি পরিচিত বিষয়ের উদাহরণ; পূর্ণ তালিকা নয়।</p>` : ''}</section>`)
         .join('')}</div>

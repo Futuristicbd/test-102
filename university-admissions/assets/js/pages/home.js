@@ -3,10 +3,10 @@
 import { TOPICS, QUESTIONS } from '../../../data/questions/index.js';
 import { POSTS, QUICK_TIPS } from '../../../data/posts.js';
 import { UNIVERSITIES } from '../../../data/universities.js';
-import { SITE, CU_PHOTOS } from '../../../data/site.js';
+import { SITE, CU_PHOTOS, CU_HERO } from '../../../data/site.js';
 import { esc, bn, today, safeURL } from '../lib/dom.js';
 import { state, save, dailyStreak, mistakeIds } from '../lib/store.js';
-import { topicCard, postCard, photo, credit, leaderboard, loadLeaderboards, hydratePhotos, MODE_INFO, topicTitle } from '../components.js';
+import { topicCard, postCard, photo, credit, heroMedia, leaderboard, loadLeaderboards, hydratePhotos, MODE_INFO, topicTitle } from '../components.js';
 import { startSession, dailyIds } from '../quiz.js';
 
 function resumeBanner() {
@@ -90,12 +90,12 @@ function cuSpotlight() {
 }
 
 export function render() {
-  const hero = CU_PHOTOS[0];
+  const hero = CU_HERO;
   const featured = [...POSTS].filter(p => p.featured).concat(POSTS.filter(p => !p.featured)).slice(0, 3);
   const name = state.player?.name;
   return `
   <section class="hero">
-    <div class="hero-media">${photo(hero, { cls: 'hero-img', eager: true })}</div>
+    ${heroMedia(hero)}
     <div class="container hero-inner">
       <span class="eyebrow light">${esc(SITE.initiative)}</span>
       <h1>${name ? `${esc(name.split(' ')[0])}, ` : ''}স্বপ্নের ক্যাম্পাসের<br>প্রস্তুতি শুরু হোক আজ।</h1>

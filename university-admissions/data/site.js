@@ -13,6 +13,19 @@ const commons = (file, width = 1280) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${width}`;
 const commonsPage = file => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`;
 
+// Header (hero) photo for the home page and the CU page. Three sizes so phones
+// download the small one; `placeholder` is a tiny blurred preview shown instantly.
+export const CU_HERO = {
+  src: 'assets/img/cu-gate-1113.webp',
+  srcset: 'assets/img/cu-gate-480.webp 480w, assets/img/cu-gate-768.webp 768w, assets/img/cu-gate-1113.webp 1113w',
+  width: 1113,
+  height: 635,
+  placeholder: 'data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAABwBACdASoYAA4APpE4l0eloyIhMAgAsBIJbACdH8Agoxgq9Xv8/Ml1anHLWAD+0UVx5Vwq3aT4PeVaJCC9DK6bpfEK1obPqn3srMzU7ZaO8s+J4Y4eRIfhwhAXT9XoP9HIag52VveVp+4/HTDGxNV+OM0jYfzWchte9olAtvt83sqyGGUFlYA8hi4v7IrXS0ju1lFpfVYXP42NYbYTH6VaQAdGmnn9NzIz5pV2cbJ5NgBOu6ORpKk2oe/6N3HZNVisX7f/ONiy8gCy/4lHdDAD7OWSQCQ/udRMx8mvpXOCsMkugke4AAAA',
+  alt: 'চট্টগ্রাম বিশ্ববিদ্যালয়ের প্রধান ফটক, ওপরে লেখা University of Chittagong',
+  caption: 'চবির প্রধান ফটক',
+  credit: 'ছবি: সংগৃহীত',
+};
+
 // Photos of the University of Chittagong.
 // `src` is a local image that always works. `remote` (optional) is a larger
 // Wikimedia Commons photo that replaces it once it loads; if it cannot load,

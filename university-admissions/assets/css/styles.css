@@ -228,9 +228,8 @@ body[data-route='play'] { padding-bottom: env(safe-area-inset-bottom, 0px); }
 /* ---------- hero ---------- */
 .hero { position: relative; isolation: isolate; color: #fff; min-height: min(78vh, 640px); display: flex; align-items: flex-end; overflow: hidden; background: #0d3b2c; }
 .hero.hero-sm { min-height: min(56vh, 460px); }
-.hero-media { position: absolute; inset: 0; z-index: -1; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05); transform: scale(1.04); transition: filter .6s; }
-.hero-media img:not(.hi-res) { filter: blur(1.5px) saturate(1.05); }
+.hero-media { position: absolute; inset: 0; z-index: -1; background: #0d3b2c center / cover no-repeat; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05); transform: scale(1.02); transition: filter .6s; }
 .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 22, 15, .25) 0%, rgba(4, 22, 15, .35) 40%, rgba(4, 22, 15, .88) 100%); }
 .hero-inner { padding: 90px 0 36px; }
 .hero h1 { color: #fff; font-size: clamp(2rem, 7.5vw, 3.6rem); text-shadow: 0 2px 20px rgba(0, 0, 0, .3); }
@@ -629,3 +628,15 @@ body.palette-open::after { content: ''; position: fixed; inset: 0; background: r
 /* jump links land below the sticky header + section tabs */
 .profile section { scroll-margin-top: calc(var(--header-h) + 64px); }
 @media (min-width: 960px) { .profile section { scroll-margin-top: calc(var(--header-h) + 16px); } }
+
+/* phones: show the whole header photo (no heavy crop), text sits below it */
+@media (max-width: 699px) {
+  .hero, .hero.hero-sm { display: block; min-height: 0; }
+  .hero-media { position: relative; inset: auto; z-index: 0; aspect-ratio: 1113 / 635; }
+  .hero-media img { transform: none; }
+  .hero-media::after { background: linear-gradient(180deg, rgba(4, 22, 15, 0) 55%, #0d3b2c 100%); }
+  .hero-inner { padding: 4px 0 30px; position: relative; }
+  .hero h1 { font-size: clamp(1.75rem, 8vw, 2.3rem); }
+  .hero-credit { top: 8px; bottom: auto; right: 8px; background: rgba(0, 0, 0, .35); padding: 1px 6px; border-radius: 6px; }
+  .cu-facts.lifted { margin-top: 16px; }
+}

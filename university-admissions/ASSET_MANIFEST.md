@@ -2,6 +2,7 @@
 
 | File | What | Source / licence |
 |---|---|---|
+| `assets/img/cu-gate-{480,768,1113}.webp` | Main gate of the University of Chittagong — header (hero) photo on the home and CU pages. Original 109 KB WebP re-encoded at three widths (27 / 47 / 72 KB); browsers download only the size they need. A 24 px blurred preview is inlined in `data/site.js` for an instant first paint. | Supplied by the site owner (credited as "ছবি: সংগৃহীত"). Confirm you have permission to use it, and add the photographer's name to `CU_HERO.credit` in `data/site.js` if known. |
 | `assets/img/cu-cover.webp` | Aerial view of the hilly CU campus (480×270) | Extracted from the previous version of this site, where it was embedded as base64 and labelled "reference থেকে পুনর্নির্মিত" (re-created from a reference). Used as the always-available fallback. |
 | `assets/img/cu-buildings.webp` | Campus buildings among hills (480×270) | Same as above; shown as "Illustrative image". |
 | `assets/img/favicon.svg` | App icon | Original project asset. |
