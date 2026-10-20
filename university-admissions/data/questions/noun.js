@@ -1,4 +1,4 @@
-// Noun — 32 questions.
+// Noun — 42 questions.
 // To add a question, copy one { … } block, paste it at the end of the list and edit it.
 // answer: "A" | "B" | "C" | "D". explainBn / units are optional. See CONTENT_GUIDE.md.
 export default {
@@ -264,6 +264,86 @@ export default {
       explain: "Use “amount” with uncountable nouns such as money.",
       explainBn: "Money uncountable, তাই amount of money; number countable noun-এর জন্য।",
       source: "Practice bank",
+    },
+    {
+      q: "In “The jury has reached its verdict,” the word “jury” is a ____ noun.",
+      options: ["collective","proper","material","abstract"],
+      answer: "A",
+      explain: "“Jury” names a group of people taken together as one unit, so it is a collective noun.",
+      explainBn: "Jury একদল মানুষকে একসাথে একটি একক হিসেবে বোঝায়, তাই এটি collective noun।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "Which of the following is an abstract noun?",
+      options: ["gold","honesty","Dhaka","army"],
+      answer: "B",
+      explain: "“Honesty” names a quality that cannot be seen or touched, so it is an abstract noun. Gold is a material noun, Dhaka a proper noun and army a collective noun.",
+      explainBn: "Honesty একটি গুণ, যা দেখা বা ছোঁয়া যায় না; তাই abstract noun। Gold material, Dhaka proper, army collective noun।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "In “This ring is made of gold,” the word “gold” is a ____ noun.",
+      options: ["proper","collective","material","abstract"],
+      answer: "C",
+      explain: "“Gold” names a substance from which things are made, so it is a material noun.",
+      explainBn: "Gold এমন একটি পদার্থ যা দিয়ে জিনিস তৈরি হয়, তাই এটি material noun।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "All the girls in the dormitory share one bathroom; it is the ____ bathroom.",
+      options: ["girl's","girls","girls's","girls'"],
+      answer: "D",
+      explain: "For a plural noun ending in -s, the possessive is formed by adding only an apostrophe: girls'.",
+      explainBn: "-s দিয়ে শেষ হওয়া plural noun-এর possessive করতে শুধু apostrophe বসে: girls'। এখানে অনেক মেয়ে, তাই girl's হবে না।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "All the women in the village joined the ____ association.",
+      options: ["women's","womens'","woman's","womens"],
+      answer: "A",
+      explain: "“Women” is an irregular plural that does not end in -s, so its possessive takes ’s: women's.",
+      explainBn: "Women একটি irregular plural যার শেষে s নেই, তাই possessive-এ 's বসে: women's।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "Which of the following is a proper noun?",
+      options: ["river","Padma","city","country"],
+      answer: "B",
+      explain: "“Padma” names one particular river, so it is a proper noun and starts with a capital letter. The others are common nouns.",
+      explainBn: "Padma একটি নির্দিষ্ট নদীর নাম, তাই proper noun এবং বড় হাতের অক্ষরে শুরু হয়। River, city, country সাধারণ নাম বা common noun।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "The noun form of “choose” is ____.",
+      options: ["chosen","chose","choice","choosy"],
+      answer: "C",
+      explain: "“Choice” is the noun form of “choose”. “Chose” and “chosen” are verb forms, and “choosy” is an adjective.",
+      explainBn: "Choose-এর noun form হলো choice। Chose ও chosen verb-এর রূপ, আর choosy একটি adjective।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "The noun form of “brave” is ____.",
+      options: ["bravely","braver","braved","bravery"],
+      answer: "D",
+      explain: "“Bravery” is the noun form of the adjective “brave”. “Bravely” is an adverb and “braver” is a comparative adjective.",
+      explainBn: "Brave (adjective)-এর noun form হলো bravery (সাহস)। Bravely adverb আর braver comparative adjective।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "A ____ of cattle was grazing in the field.",
+      options: ["herd","flock","swarm","pack"],
+      answer: "A",
+      explain: "The collective noun for cattle is “herd”. A flock is used for sheep or birds, a swarm for bees, and a pack for wolves.",
+      explainBn: "গরুর দলের collective noun হলো herd। Flock ভেড়া বা পাখির, swarm মৌমাছির, pack নেকড়ের দলের জন্য।",
+      source: "Practice (TOEFL-style)",
+    },
+    {
+      q: "The noun form of “succeed” is ____.",
+      options: ["successful","successfully","succeeding","success"],
+      answer: "D",
+      explain: "“Success” is the noun form of “succeed”. “Successful” is an adjective and “successfully” an adverb.",
+      explainBn: "Succeed (verb)-এর noun form হলো success। Successful adjective আর successfully adverb।",
+      source: "Practice (TOEFL-style)",
     },
   ],
 };

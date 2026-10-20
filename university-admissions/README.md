@@ -38,7 +38,7 @@ assets/
     pages/                  One file per page: home, start, play, result,
                             tips, universities, progress, misc
 data/                       ← ALL CONTENT. See CONTENT_GUIDE.md
-  questions/*.js            One file per topic (479 questions, 13 topics)
+  questions/*.js            One file per topic (624 questions, 13 topics)
   posts.js                  Tips & Tricks posts
   universities.js           Universities, official links, resources
   site.js                   Site name, credits, CU photos

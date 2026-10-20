@@ -1,4 +1,4 @@
-// Mixed English — 50 questions.
+// Mixed English — 49 questions.
 // To add a question, copy one { … } block, paste it at the end of the list and edit it.
 // answer: "A" | "B" | "C" | "D". explainBn / units are optional. See CONTENT_GUIDE.md.
 export default {
@@ -127,14 +127,6 @@ export default {
       answer: "B",
       explain: "Better is the comparative form of good.",
       explainBn: "Good-এর comparative better; more better দ্বৈত comparative হওয়ায় ভুল।",
-      source: "Practice bank",
-    },
-    {
-      q: "The plural of “criterion” is ____.",
-      options: ["criterions","criteria","criterias","criteriones"],
-      answer: "B",
-      explain: "Criterion is singular; criteria is plural.",
-      explainBn: "Criterion singular, plural criteria।",
       source: "Practice bank",
     },
     {

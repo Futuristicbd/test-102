@@ -45,7 +45,7 @@ for (const t of TOPICS_RAW) {
     if (/Choose from:/.test(q.q)) warn(`${at}: question repeats its options ("Choose from: …")`);
     // Near-duplicate check: ignore blank length, punctuation and case.
     const norm = s => String(s).toLowerCase().replace(/_+/g, '_').replace(/[^a-z0-9_\u0980-\u09ff]+/g, ' ').trim();
-    const key = `${t.id}|${norm(q.q)}|${q.options.map(norm).sort().join('|')}`;
+    const key = `${norm(q.q)}|${q.options.map(norm).sort().join('|')}`; // across all topics
     if (seenText.has(key)) warn(`${at}: same question as ${seenText.get(key)}`);
     else seenText.set(key, at);
   });
