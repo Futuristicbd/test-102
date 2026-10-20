@@ -53,14 +53,12 @@ function modes() {
         <h3>Fun Quiz</h3>
         <p>Countdown timer, points, streak bonus, 50:50 আর Freeze lifeline। ঠিক-ভুল সঙ্গে সঙ্গে, ব্যাখ্যাসহ।</p>
         <span class="mode-tags"><span>⏳ ২০–৩০ সে/প্রশ্ন</span><span>🔥 x2 bonus</span><span>🏆 Leaderboard</span></span>
-        <span class="btn">খেলা শুরু →</span>
       </a>
       <a class="mode-card t-exam" href="#start/exam">
         <span class="mode-emoji" aria-hidden="true">⏱️</span>
         <h3>Model Test</h3>
         <p>ভর্তি পরীক্ষার মতো একটানা timer, flag, প্রশ্ন তালিকা আর negative marking। Submit-এর পরে পূর্ণ বিশ্লেষণ।</p>
         <span class="mode-tags"><span>📋 ১০–৫০ প্রশ্ন</span><span>➖ −০.২৫ option</span><span>📊 Topic report</span></span>
-        <span class="btn">Test দাও →</span>
       </a>
     </div>
     <div class="mini-modes">
@@ -116,7 +114,7 @@ export function render() {
   ${daily()}
   ${modes()}
   <section class="container section">
-    <div class="section-head"><div><h2>Topic ধরে প্রস্তুতি</h2><p>যেকোনো topic-এ চাপ দাও, তারপর mode বেছে নাও। নিয়মিত নতুন প্রশ্ন যোগ হচ্ছে।</p></div><a class="text-link" href="#start/exam">সব topic →</a></div>
+    <div class="section-head"><div><h2>Topic ধরে প্রস্তুতি</h2><p>যে topic-এ দুর্বল, সেখান থেকে শুরু করো।</p></div></div>
     <div class="topic-grid">${TOPICS.map(t => topicCard(t)).join('')}</div>
   </section>
   ${cuSpotlight()}

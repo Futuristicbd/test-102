@@ -1,6 +1,6 @@
 // Number — 31 questions.
-// To add a question, copy one block below, paste it at the end of the list and edit it.
-// answer: 'A' | 'B' | 'C' | 'D'. explainBn and units are optional. See CONTENT_GUIDE.md.
+// To add a question, copy one { … } block, paste it at the end of the list and edit it.
+// answer: "A" | "B" | "C" | "D". explainBn / units are optional. See CONTENT_GUIDE.md.
 export default {
   id: "number",
   title: "Number",
@@ -14,6 +14,7 @@ export default {
       options: ["shepies","sheep","sheeps","sheepes"],
       answer: "B",
       explain: "“Sheep” has the same singular and plural form.",
+      explainBn: "Sheep-এর singular ও plural একই: one sheep, two sheep।",
       source: "DU F Unit 2024–25",
     },
     {
@@ -21,6 +22,7 @@ export default {
       options: ["wife","roof","wolf","shelf"],
       answer: "B",
       explain: "“Roof” normally becomes “roofs”; the other choices form “wives”, “wolves” and “shelves”.",
+      explainBn: "Roof-এর plural roofs; wife → wives, wolf → wolves, shelf → shelves।",
       source: "DU B Unit 2005–06",
     },
     {
@@ -28,6 +30,7 @@ export default {
       options: ["crisiss","crisises","crises","crise"],
       answer: "C",
       explain: "“Crisis” changes to “crises” in the plural.",
+      explainBn: "-is দিয়ে শেষ হওয়া Greek শব্দে -is বদলে -es হয়: crisis → crises।",
       source: "JnU E 2025–26; RU D2 2018–19",
     },
     {
@@ -35,6 +38,7 @@ export default {
       options: ["mice","data","lice","appendix"],
       answer: "D",
       explain: "“Appendix” is singular; “appendices” is one of its plural forms.",
+      explainBn: "Appendix singular; mice, data, lice প্লুরাল রূপ।",
       source: "CoU B 2025–26",
     },
     {
@@ -42,6 +46,7 @@ export default {
       options: ["phenomenons","phenomenoes","phenomena","phenomenas"],
       answer: "C",
       explain: "The classical plural of “phenomenon” is “phenomena”.",
+      explainBn: "-on দিয়ে শেষ হওয়া Greek শব্দে -on বদলে -a হয়: phenomenon → phenomena।",
       source: "JnU E 2024–25; GST A 2022–23",
     },
     {
@@ -49,6 +54,7 @@ export default {
       options: ["halfs","halves","halve","halfes"],
       answer: "B",
       explain: "“Half” changes its -f to -ves: half → halves.",
+      explainBn: "Half-এর f বদলে ves: halves।",
       source: "JnU E 2024–25",
     },
     {
@@ -56,6 +62,7 @@ export default {
       options: ["theses","thesies","thesis","theises"],
       answer: "A",
       explain: "“Thesis” changes to “theses” in the plural.",
+      explainBn: "-is দিয়ে শেষ শব্দে -is বদলে -es: thesis → theses।",
       source: "RU A 2024–25",
     },
     {
@@ -63,6 +70,7 @@ export default {
       options: ["statement","statements","states","state"],
       answer: "B",
       explain: "“Monthly statements” is the correct plural phrase in the context of repeated reports.",
+      explainBn: "Monthly statements—একাধিক মাসিক বিবরণী বোঝাতে plural।",
       source: "CU B 2024–25",
     },
     {
@@ -70,6 +78,7 @@ export default {
       options: ["dative","datuc","datum","data"],
       answer: "C",
       explain: "“Datum” is the traditional singular form of “data”.",
+      explainBn: "Data-এর singular datum; data নিজে plural রূপ।",
       source: "JU E 2022–23",
     },
     {
@@ -77,6 +86,7 @@ export default {
       options: ["alumnae","alumni","alumnus","alumnas"],
       answer: "A",
       explain: "“Alumna” is feminine singular; its Latin plural is “alumnae”.",
+      explainBn: "Alumna (মেয়ে প্রাক্তন শিক্ষার্থী)-এর plural alumnae; alumni হলো alumnus-এর plural।",
       source: "GST B 2023–24",
     },
     {
@@ -84,6 +94,7 @@ export default {
       options: ["indices","indexess","index","indexs"],
       answer: "A",
       explain: "“Indices” is the classical plural form of “index”.",
+      explainBn: "Index-এর classical plural indices (indexes-ও চলে)।",
       source: "JU E 2022–23",
     },
     {
@@ -91,6 +102,7 @@ export default {
       options: ["cacti","foci","oases","nucleus"],
       answer: "D",
       explain: "“Nucleus” is singular; “nuclei” is plural.",
+      explainBn: "Nucleus singular (plural nuclei); cacti, foci, oases plural।",
       source: "JU E 2022–23",
     },
     {
@@ -98,6 +110,7 @@ export default {
       options: ["radio","radium","radial","radii"],
       answer: "D",
       explain: "“Radius” changes to “radii” in the classical plural.",
+      explainBn: "-us দিয়ে শেষ Latin শব্দে -us বদলে -i: radius → radii।",
       source: "RU A 2021–22",
     },
     {
@@ -105,6 +118,7 @@ export default {
       options: ["intention","aircraft","mouse","thesis"],
       answer: "B",
       explain: "“Aircraft” has the same form for one or more aircraft.",
+      explainBn: "Aircraft-এর singular ও plural একই: one aircraft, two aircraft।",
       source: "JU H 2020–21",
     },
     {
@@ -112,6 +126,7 @@ export default {
       options: ["sheeps","sheepes","sheep","sheepess"],
       answer: "C",
       explain: "“Sheep” remains unchanged in the plural.",
+      explainBn: "Sheep-এর plural-ও sheep: four sheep।",
       source: "JU H 2019–20; RU A 2016–17",
     },
     {
@@ -119,6 +134,7 @@ export default {
       options: ["news","cattle","oats","scissors"],
       answer: "A",
       explain: "“News” ends in -s but is grammatically singular in standard usage.",
+      explainBn: "News দেখতে plural হলেও singular: The news is good। Cattle, oats, scissors plural।",
       source: "RU D2 2018–19",
     },
     {
@@ -126,6 +142,7 @@ export default {
       options: ["criterions","criteriones","criterias","criteria"],
       answer: "D",
       explain: "“Criterion” is singular; “criteria” is plural.",
+      explainBn: "Criterion-এর plural criteria (on → a)।",
       source: "Practice bank",
     },
     {
@@ -133,6 +150,7 @@ export default {
       options: ["heros","heroes","herois","heross"],
       answer: "B",
       explain: "“Hero” normally takes -es: heroes.",
+      explainBn: "Hero-র plural heroes—o দিয়ে শেষ কিছু শব্দে -es বসে।",
       source: "Practice bank",
     },
     {
@@ -140,6 +158,7 @@ export default {
       options: ["ovams","ovumes","ovums","ova"],
       answer: "D",
       explain: "“Ovum” has the Latin plural “ova”.",
+      explainBn: "-um দিয়ে শেষ Latin শব্দে -um বদলে -a: ovum → ova।",
       source: "BCS 39th",
     },
     {
@@ -147,6 +166,7 @@ export default {
       options: ["alumnus","aluminous","aluminus","aluminise"],
       answer: "A",
       explain: "“Alumnus” is singular and “alumni” is its traditional plural.",
+      explainBn: "Alumni-র singular alumnus (ছেলে প্রাক্তন শিক্ষার্থী)।",
       source: "CoU B 2018–19",
     },
     {
@@ -154,6 +174,7 @@ export default {
       options: ["cactusse","cacti","cactu","cacty"],
       answer: "B",
       explain: "“Cacti” is the classical plural form of “cactus”.",
+      explainBn: "-us বদলে -i: cactus → cacti (cactuses-ও চলে)।",
       source: "Practice bank",
     },
     {
@@ -161,6 +182,7 @@ export default {
       options: ["appendices","appendixs","appendises","appendixess"],
       answer: "A",
       explain: "“Appendices” is the classical plural form. “Appendixes” is also used in some contexts, but it is not among these choices.",
+      explainBn: "Appendix-এর classical plural appendices।",
       source: "Practice bank",
     },
     {
@@ -168,6 +190,7 @@ export default {
       options: ["louses","lice","lices","licess"],
       answer: "B",
       explain: "“Louse” changes irregularly to “lice”.",
+      explainBn: "Louse-এর plural অনিয়মিত: lice (mouse → mice-এর মতো)।",
       source: "BCS 38th",
     },
     {
@@ -175,6 +198,7 @@ export default {
       options: ["canones","canons","canon","cannons"],
       answer: "B",
       explain: "“Canons” is the plural of “canon” in the sense of a rule, principle or accepted body of work.",
+      explainBn: "Canon (নিয়ম/নীতি)-এর plural canons; cannons হলো cannon (কামান)-এর plural।",
       source: "Practice bank",
     },
     {
@@ -182,13 +206,15 @@ export default {
       options: ["thiefs","thieves","thiefes","thiefee"],
       answer: "B",
       explain: "“Thief” changes -f to -ves in the plural: thieves.",
+      explainBn: "Thief-এর f বদলে ves: thieves।",
       source: "RU A 2016–17",
     },
     {
       q: "Which of these is commonly uncountable when referring to food generally?",
       options: ["crisis","soup","louse","analysis"],
       answer: "B",
-      explain: "“Soup” is commonly an uncountable mass noun in this general sense; the other options have regular plural forms.",
+      explain: "“Soup” is commonly an uncountable mass noun in this general sense; crisis, louse and analysis are countable (crises, lice, analyses).",
+      explainBn: "সাধারণভাবে খাবার হিসেবে soup uncountable; crisis, louse, analysis countable (crises, lice, analyses)।",
       source: "JKKNIU 2018–19",
     },
     {
@@ -196,13 +222,15 @@ export default {
       options: ["wood","fish","issue","light"],
       answer: "B",
       explain: "“Fish” can have the same form in singular and plural when referring to fish generally.",
+      explainBn: "Fish-এর singular ও plural সাধারণত একই: one fish, many fish।",
       source: "RU E 2016–17",
     },
     {
-      q: "The plural form of “referendum” is ____.",
-      options: ["referendums","referenda","referanda","referendies"],
+      q: "The classical (Latin) plural of “referendum” is ____.",
+      options: ["referendae","referenda","referanda","referendies"],
       answer: "B",
-      explain: "“Referenda” is the classical plural of “referendum”; “referendums” is also accepted in modern usage.",
+      explain: "The Latin plural of “referendum” is “referenda”; in everyday modern English “referendums” is also common.",
+      explainBn: "-um বদলে -a: referendum-এর classical (Latin) plural referenda।",
       source: "CoU C 2015–16",
     },
     {
@@ -210,6 +238,7 @@ export default {
       options: ["criteria","bacteria","crisis","phenomena"],
       answer: "C",
       explain: "“Crisis” is singular; “criteria”, “bacteria” and “phenomena” are plural forms.",
+      explainBn: "Crisis singular; criteria, bacteria, phenomena plural।",
       source: "Practice bank",
     },
     {
@@ -217,6 +246,7 @@ export default {
       options: ["deer","deers","deerss","deariven"],
       answer: "A",
       explain: "“Deer” is normally unchanged in the plural.",
+      explainBn: "Deer-এর plural-ও deer।",
       source: "Practice bank",
     },
     {
@@ -224,6 +254,7 @@ export default {
       options: ["formula","vertex","memoranda","agendum"],
       answer: "C",
       explain: "“Memoranda” is plural; “memorandum” is singular.",
+      explainBn: "Memoranda plural (singular memorandum); formula, vertex, agendum singular।",
       source: "Practice bank",
     },
   ],

@@ -1,6 +1,6 @@
 // Gender — 20 questions.
-// To add a question, copy one block below, paste it at the end of the list and edit it.
-// answer: 'A' | 'B' | 'C' | 'D'. explainBn and units are optional. See CONTENT_GUIDE.md.
+// To add a question, copy one { … } block, paste it at the end of the list and edit it.
+// answer: "A" | "B" | "C" | "D". explainBn / units are optional. See CONTENT_GUIDE.md.
 export default {
   id: "gender",
   title: "Gender",
@@ -14,6 +14,7 @@ export default {
       options: ["hind","vixen","mare","duchess"],
       answer: "A",
       explain: "A female deer is a hind; “stag” is the male deer.",
+      explainBn: "Stag পুরুষ হরিণ, স্ত্রী হরিণ hind। Vixen স্ত্রী শিয়াল, mare ঘোটকী।",
       source: "BUP FASS 2024–25",
     },
     {
@@ -21,6 +22,7 @@ export default {
       options: ["drake","drone","doe","dam"],
       answer: "B",
       explain: "A male bee is called a drone.",
+      explainBn: "পুরুষ মৌমাছিকে drone বলে; drake পুরুষ হাঁস।",
       source: "CU B Unit 2024–25",
     },
     {
@@ -28,6 +30,7 @@ export default {
       options: ["airwoman","flight man","aviator","none"],
       answer: "C",
       explain: "“Aviator” can refer to a pilot regardless of gender.",
+      explainBn: "Aviator মানে বৈমানিক—নারী-পুরুষ যে কাউকে বোঝায়, তাই gender-inclusive শব্দ।",
       source: "CU D Unit 2021–22",
     },
     {
@@ -35,6 +38,7 @@ export default {
       options: ["goose","horse","duck","rhinoceros"],
       answer: "A",
       explain: "A gander is a male goose.",
+      explainBn: "Gander পুরুষ রাজহাঁস (goose); স্ত্রী রাজহাঁসও goose।",
       source: "RU A Unit 2020–21",
     },
     {
@@ -42,6 +46,7 @@ export default {
       options: ["mermaid","stallion","dog","boar"],
       answer: "B",
       explain: "A stallion is a male horse; a mare is an adult female horse.",
+      explainBn: "Mare ঘোটকী, পুরুষ ঘোড়া stallion।",
       source: "JU B Unit 2021–22; RU A Unit 2021–22",
     },
     {
@@ -49,6 +54,7 @@ export default {
       options: ["duck","duchies","dukies","duchess"],
       answer: "D",
       explain: "The feminine counterpart of “duke” is “duchess”.",
+      explainBn: "Duke-এর স্ত্রীলিঙ্গ duchess।",
       source: "RU F Unit 2017–18",
     },
     {
@@ -56,6 +62,7 @@ export default {
       options: ["ewe","spouse","prince","mare"],
       answer: "B",
       explain: "“Spouse” can refer to a husband or a wife, so it is common gender.",
+      explainBn: "Spouse মানে স্বামী বা স্ত্রী—দুই লিঙ্গই বোঝায়, তাই common gender।",
       source: "RU E Unit 2018–19",
     },
     {
@@ -63,6 +70,7 @@ export default {
       options: ["monk","monck","nan","nunce"],
       answer: "A",
       explain: "A monk is the male counterpart traditionally paired with a nun.",
+      explainBn: "Nun (সন্ন্যাসিনী)-এর পুরুষবাচক monk (সন্ন্যাসী)।",
       source: "JKKNIU D Unit 2018–19",
     },
     {
@@ -70,6 +78,7 @@ export default {
       options: ["neuter","feminine","common","masculine"],
       answer: "C",
       explain: "“Orphan” does not specify gender and may refer to a boy or a girl.",
+      explainBn: "Orphan ছেলে বা মেয়ে যে কেউ হতে পারে, তাই common gender।",
       source: "RU D Unit 2015–16",
     },
     {
@@ -77,6 +86,7 @@ export default {
       options: ["swain : nymph","ram : shrew","tailor : seamstress","horse : mare"],
       answer: "B",
       explain: "“Ram : shrew” is not a matching masculine–feminine pair. A ram is a male sheep; a shrew is a small mammal and not the female counterpart.",
+      explainBn: "Ram পুরুষ ভেড়া, এর স্ত্রীলিঙ্গ ewe—shrew নয়। বাকি জোড়াগুলো সঠিক।",
       source: "JU H Unit 2017–18",
     },
     {
@@ -84,6 +94,7 @@ export default {
       options: ["tigren","tigress","tigeri","tigerian"],
       answer: "B",
       explain: "“Tigress” is the traditional feminine form.",
+      explainBn: "Tiger-এর স্ত্রীলিঙ্গ tigress।",
       source: "Practice bank",
     },
     {
@@ -91,13 +102,15 @@ export default {
       options: ["groom","bridesmaid","lad","drake"],
       answer: "A",
       explain: "The masculine counterpart of “bride” is “groom”.",
+      explainBn: "Bride (কনে)-এর পুরুষবাচক bridegroom বা groom।",
       source: "Practice bank",
     },
     {
       q: "An unmarried woman is traditionally called a ____.",
       options: ["seamstress","bachelor","she-bachelor","spinster"],
       answer: "D",
-      explain: "The source uses “spinster”; note that it is an old-fashioned term, while “single woman” is more neutral today.",
+      explain: "“Spinster” is the traditional exam answer; it is old-fashioned today, and “single woman” is more neutral.",
+      explainBn: "অবিবাহিত নারীকে প্রথাগতভাবে spinster বলা হয়; bachelor অবিবাহিত পুরুষ।",
       source: "Practice bank",
     },
     {
@@ -105,6 +118,7 @@ export default {
       options: ["bachelor","cousin","mermaid","governess"],
       answer: "B",
       explain: "“Cousin” can refer to a male or female relative.",
+      explainBn: "Cousin ছেলে বা মেয়ে যে কেউ হতে পারে, তাই common gender।",
       source: "RU A Unit 2021–22",
     },
     {
@@ -112,20 +126,23 @@ export default {
       options: ["he-ass","pea-ass","jackass","jhone-ass"],
       answer: "C",
       explain: "The traditional masculine counterpart is “jackass”.",
+      explainBn: "She-ass (গাধী)-এর পুরুষবাচক jackass বা he-ass; প্রচলিত উত্তর jackass।",
       source: "Practice bank",
     },
     {
-      q: "Which of these nouns is treated as masculine in personification in the source item?",
+      q: "In personification, which noun is traditionally treated as masculine?",
       options: ["Nature","Mercy","Death","Peace"],
       answer: "C",
-      explain: "The source item treats “Death” as masculine in personification; this is a conventional exam question, not a rule about real-world gender.",
+      explain: "Powerful or terrible things such as Death, Time and the Sun are personified as masculine; Nature, Mercy and Peace as feminine.",
+      explainBn: "Personification-এ শক্তিশালী ও ভয়ংকর জিনিস (Death, Time, Sun) পুরুষবাচক ধরা হয়; Nature, Mercy, Peace স্ত্রীবাচক।",
       source: "Practice bank",
     },
     {
-      q: "Which one is always feminine in the source question?",
+      q: "Which noun traditionally refers only to a woman?",
       options: ["fowl","foal","spouse","shrew"],
       answer: "D",
-      explain: "The source answer identifies “shrew” as feminine. “Shrew” can also refer to a small mammal, so read this as traditional gender-vocabulary practice.",
+      explain: "“Shrew” in the sense of a bad-tempered woman refers only to a woman; fowl, foal and spouse are common gender.",
+      explainBn: "Shrew (ঝগড়াটে নারী) অর্থে শব্দটি শুধু নারীকে বোঝায়; fowl, foal, spouse common gender।",
       source: "Practice bank",
     },
     {
@@ -133,13 +150,15 @@ export default {
       options: ["nurse","virgin","shrew","all are gender-specific"],
       answer: "A",
       explain: "“Nurse” can refer to a person of any gender; it is a common-gender noun.",
+      explainBn: "Nurse নারী-পুরুষ যে কেউ হতে পারে, তাই common gender।",
       source: "Practice bank",
     },
     {
-      q: "Which of the following is a masculine noun?",
+      q: "In personification, which of the following is treated as masculine?",
       options: ["miss","spring","death","liberty"],
       answer: "C",
-      explain: "In the source’s personification convention, “death” is treated as masculine.",
+      explain: "In personification, “death” is treated as masculine; spring and liberty are feminine.",
+      explainBn: "Personification-এ death পুরুষবাচক; spring ও liberty স্ত্রীবাচক, miss নারীবাচক।",
       source: "MAT 2022–23",
     },
     {
@@ -147,6 +166,7 @@ export default {
       options: ["niece","nice","neese","daughter"],
       answer: "A",
       explain: "The feminine counterpart of “nephew” is “niece”.",
+      explainBn: "Nephew (ভাতিজা/ভাগ্নে)-এর স্ত্রীলিঙ্গ niece (ভাতিজি/ভাগ্নি)।",
       source: "Practice bank",
     },
   ],

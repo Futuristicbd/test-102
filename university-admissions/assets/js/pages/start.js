@@ -15,12 +15,6 @@ const OPTIONS = {
   practice: { counts: [10, 20, 30], default: 10 },
 };
 
-const MODE_TEXT = {
-  fun: ['প্রতি প্রশ্নে countdown', 'ঠিক উত্তরে points, streak-এ x1.5 / x2 bonus', '50:50 ও Freeze lifeline', 'সঙ্গে সঙ্গে ব্যাখ্যা'],
-  exam: ['পুরো test-এ একটি timer', 'প্রশ্ন বাদ দিয়ে পরে ফেরা, 🚩 flag', 'চাইলে negative marking', 'Submit-এর পরে answer key ও বিশ্লেষণ'],
-  practice: ['কোনো timer নেই', 'প্রতিটি উত্তরের পরেই ব্যাখ্যা', 'নতুন rule শেখার জন্য সেরা', 'ভুলগুলো আলাদা করে জমা থাকে'],
-};
-
 function topicOption(id, title, sub, count, icon, checked, tone = '') {
   const acc = topicAccuracy(id);
   return `<label class="pick ${checked ? 'is-checked' : ''}" style="${tone ? `--tone:${esc(tone)}` : ''}">
@@ -56,7 +50,7 @@ export function render([mode = 'fun', topic = 'all']) {
 
   const ranked = mode !== 'practice';
   return `<div class="container">
-    ${pageHead(`${info.icon} ${info.label}`, info.bn, 'নতুন session', [[null, info.label]])}
+    ${pageHead(`${info.icon} ${info.label}`, info.bn, '', [[null, info.label]])}
     <nav class="mode-tabs" aria-label="Mode">${Object.entries(MODE_INFO)
       .map(([id, m]) => `<a href="#start/${id}/${esc(topic)}" class="${id === mode ? 'active' : ''} t-${m.color}" ${id === mode ? 'aria-current="page"' : ''}><span aria-hidden="true">${m.icon}</span>${esc(m.label)}</a>`)
       .join('')}</nav>
@@ -79,8 +73,7 @@ export function render([mode = 'fun', topic = 'all']) {
             <input id="player-name" name="name" maxlength="60" autocomplete="name" placeholder="তোমার নাম" value="${esc(p.name || '')}">
             <div class="avatars" role="radiogroup" aria-label="Avatar">${AVATARS.map(a => `<label><input type="radio" name="avatar" value="${a}" ${(p.avatar || '🚂') === a ? 'checked' : ''}><span>${a}</span></label>`).join('')}</div>
           </div>` : ''}
-          <ul class="mode-points">${MODE_TEXT[mode].map(t => `<li>${esc(t)}</li>`).join('')}</ul>
-          <button class="btn big block t-${info.color}" type="submit">${info.icon} শুরু করো</button>
+          <button class="btn big block desktop-only t-${info.color}" type="submit">${info.icon} শুরু করো</button>
         </div>
       </aside>
       <button class="btn big start-fab t-${info.color}" type="submit" aria-hidden="true" tabindex="-1">${info.icon} শুরু করো →</button>

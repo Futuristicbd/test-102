@@ -1,6 +1,6 @@
 // Conditional Sentences — 15 questions.
-// To add a question, copy one block below, paste it at the end of the list and edit it.
-// answer: 'A' | 'B' | 'C' | 'D'. explainBn and units are optional. See CONTENT_GUIDE.md.
+// To add a question, copy one { … } block, paste it at the end of the list and edit it.
+// answer: "A" | "B" | "C" | "D". explainBn / units are optional. See CONTENT_GUIDE.md.
 export default {
   id: "conditional-sentences",
   title: "Conditional Sentences",
@@ -14,56 +14,56 @@ export default {
       options: ["if he didn’t get a flat tire","if the flat tire hadn’t happened","had he not had a flat tire","had the tire not flattened itself"],
       answer: "C",
       explain: "এটি past unreal condition। “Would have attended” অতীতের অসম্ভব ফল বোঝায়। “If he had not had”–এর সংক্ষিপ্ত inversion হলো “Had he not had”।",
-      source: "Exercise 21 / Mini-test — practice question",
+      source: "Practice bank",
     },
     {
       q: "____________ he would have come to class.",
       options: ["If Mike is able to finish his homework","Would Mike be able to finish his homework","If Mike could finish his homework","If Mike had been able to finish his homework"],
       answer: "D",
       explain: "“Would have come” থাকায় অতীতের unreal condition বোঝায়। If-clause-এ past perfect: “had been able” বসবে।",
-      source: "Exercise 21 / Mini-test — practice question",
+      source: "Practice bank",
     },
     {
       q: "Ben would have studied medicine if he ____________ to medical school.",
       options: ["could be able to enter","had been admitted","was admitted","were admitted"],
       answer: "B",
       explain: "এটি third conditional। অতীতের অসম্পন্ন শর্তে if-clause-এ “had + V3” লাগে। Passive form: “had been admitted”।",
-      source: "Exercise 21 / Mini-test — practice question",
+      source: "Practice bank",
     },
     {
       q: "____________, he would have been able to pass the exam.",
       options: ["If he studied more","If he were studying more","Studying more","Had he studied more"],
       answer: "D",
       explain: "“Had he studied more” হলো “If he had studied more”-এর conditional inversion। “Would have been able” অতীতের unreal result বোঝায়।",
-      source: "Exercise 21 / Mini-test — practice question",
+      source: "Practice bank",
     },
     {
       q: "If today ________ Saturday, we could go to the beach.",
       options: ["was","is","were","had been"],
       answer: "C",
       explain: "বর্তমানের কাল্পনিক পরিস্থিতিতে formal English-এ “If I/he/she/it were” ব্যবহার করা হয়। তাই উত্তর “were”।",
-      source: "Exercise 21 / Mini-test — practice question",
+      source: "Practice bank",
     },
     {
       q: "____________ that picture, he would have signed his name in the corner.",
       options: ["If he painted","If he paints","If he had painted","If he would have painted"],
       answer: "C",
       explain: "“Would have signed” অতীতের unreal result। তাই if-clause-এ past perfect “had painted” হবে।",
-      source: "Exercise 21 / Mini-test — practice question",
+      source: "Practice bank",
     },
     {
       q: "We will have plenty of time to finish the project before dinner if it ____________ only ten o’clock now.",
       options: ["is","was","were","has been"],
       answer: "A",
-      explain: "প্রদত্ত answer key অনুযায়ী উত্তর “is”। তবে বাক্যে “now” ও “will have” একসঙ্গে থাকায় গঠনটি কিছুটা অস্বাভাবিক; স্বাভাবিকভাবে বলা যায়, “if it is only ten o’clock now”.",
-      source: "Exercise 21 / Mini-test — practice question",
+      explain: "এটি বাস্তব বর্তমান শর্ত—এখন সত্যিই দশটা বাজলে হাতে যথেষ্ট সময় থাকবে। বাস্তব শর্তে if-clause-এ present simple: is।",
+      source: "Practice bank",
     },
     {
       q: "My dog always wakes me up if he _________ strange noises.",
       options: ["hear","hears","heard","had heard"],
       answer: "B",
       explain: "Zero conditional-এ অভ্যাসগত ফল বোঝাতে if-clause-এ present simple “hears” বসে.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -71,7 +71,7 @@ export default {
       options: ["see","saw","will see","had seen"],
       answer: "A",
       explain: "বাস্তব ভবিষ্যৎ শর্তে if-clause-এ present simple “see” ব্যবহৃত হয়.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -79,7 +79,7 @@ export default {
       options: ["get","got","gets","had got"],
       answer: "C",
       explain: "First conditional-এর if-clause-এ present simple: “gets”.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -87,7 +87,7 @@ export default {
       options: ["turn","turned","will turn","had turned"],
       answer: "A",
       explain: "If-clause-এ future meaning থাকলেও সাধারণত present simple “turn” ব্যবহৃত হয়.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -95,7 +95,7 @@ export default {
       options: ["are","was","were","had been"],
       answer: "C",
       explain: "As though দিয়ে অবাস্তব তুলনা বোঝালে past subjunctive “were” ব্যবহার করা হয়.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -103,7 +103,8 @@ export default {
       options: ["will call","would call","called","would have called"],
       answer: "D",
       explain: "Third conditional: if + past perfect, would have + past participle.",
-      source: "Exercise 21 — practice question",
+      explainBn: "Third conditional: if + had + V3 (had left), main clause-এ would have + V3: would have called।",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -111,7 +112,7 @@ export default {
       options: ["will talk","would talk","would have talked","talked"],
       answer: "C",
       explain: "অতীতের unreal condition-এর ফলাফল: “would have talked”.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
     {
@@ -119,7 +120,7 @@ export default {
       options: ["explain","explained","will explain","had explained"],
       answer: "B",
       explain: "Second conditional-এ would + verb-এর সঙ্গে if-clause-এ past simple “explained” ব্যবহৃত হয়.",
-      source: "Exercise 21 — practice question",
+      source: "Practice bank",
       units: [],
     },
   ],

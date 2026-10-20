@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.1.0 — 150 new questions, full answer review, cleaner buttons
+### Questions
+* 4 new topics: Adverb (60), Modal Verb (30), Causative Verb (30),
+  Subjunctive (30), each with answer and explanation. The bank now has 479
+  questions in 13 topics.
+* Every question has its own explanation; new Bangla explanations for Tense,
+  Sequence of Tense, Noun, Number, Gender, Mixed English and Article.
+  `npm run check` now fails if a question has no explanation.
+* Whole bank re-read: 25 duplicate Article questions merged (sources kept),
+  ambiguous items rewritten (Article, Sequence of Tense, Number, Gender, Mixed,
+  Noun), answer-key notes and repeated "Choose from:" lists removed.
+### Answers are always visible
+* Result page: the answer sheet comes right after the score; every wrong or
+  skipped question shows "সঠিক উত্তর: X. option" plus the explanation (no
+  more hidden/collapsed explanations). The topic leaderboard moved below it.
+* Fun Quiz / Practice feedback names the correct option, not only its letter.
+### Fewer, clearer buttons
+* One start button per screen (in-card on desktop, floating on phones), one
+  Submit in Model Test, no fake buttons on home mode cards, plain labels
+  instead of filler text.
+* Leaderboard errors explain themselves ("Network unavailable", "Leaderboard
+  service is not configured yet").
+
 ## 2.0.3 — easier database setup
 * The API finds the MongoDB connection string whether it is named
   `MONGODB_URI`, `MONGODB_URL`, `STORAGE_URL` or `<PREFIX>_URL` (Vercel's

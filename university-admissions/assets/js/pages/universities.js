@@ -19,8 +19,9 @@ function directory() {
 }
 
 function list() {
-  const types = ['all', ...new Set(UNIVERSITIES.map(u => u.type))];
-  const shown = UNIVERSITIES.filter(u => typeFilter === 'all' || u.type === typeFilter);
+  const typeOf = u => String(u.type).normalize('NFC').trim();
+  const types = ['all', ...new Set(UNIVERSITIES.map(typeOf))];
+  const shown = UNIVERSITIES.filter(u => typeFilter === 'all' || typeOf(u) === typeFilter);
   return `<div class="container">
     ${pageHead('বিশ্ববিদ্যালয় ও Official links', 'প্রতিটি বিশ্ববিদ্যালয়ের official website ও admission portal এক জায়গায়। তারিখ, যোগ্যতা ও fee সবসময় official circular থেকে যাচাই করো।', 'FIND YOUR CAMPUS')}
     <div class="chips scroll" role="group" aria-label="ধরন">${types

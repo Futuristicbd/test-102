@@ -16,7 +16,7 @@ export const leaderboardPage = {
       <div class="field"><label class="label" for="lb-topic">Topic</label>
         <select id="lb-topic"><option value="all">সব topic</option>${TOPICS.map(t => `<option value="${esc(t.id)}" ${lbTopic === t.id ? 'selected' : ''}>${esc(t.title)}</option>`).join('')}</select></div>
       ${leaderboard({ mode: lbMode, topic: lbTopic, limit: 50, tabs: true })}
-      <p class="muted small">Score server-এ আবার হিসাব করে যাচাই করা হয়। শুধু topic-ভিত্তিক Fun Quiz ও Model Test leaderboard-এ গোনা হয় (ভুলের practice বা দৈনিক চ্যালেঞ্জ নয়)।</p>
+      <p class="muted small">শুধু topic বেছে দেওয়া Fun Quiz ও Model Test-এর score এখানে আসে।</p>
     </div>`;
   },
   mount() {
