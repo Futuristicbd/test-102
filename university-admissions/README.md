@@ -75,7 +75,9 @@ leaderboard works locally (it resets on restart). Set `MONGODB_URI` in a local
 * Framework preset: **Other**. Build command: *(empty)*. Output directory: `.`
 * Environment variables:
   * `MONGODB_URI` — MongoDB Atlas connection string (**Sensitive**, server only).
-  * `MONGODB_DB` — `admission_companion`.
+    Using the Vercel → MongoDB Atlas integration instead? Its `MONGODB_URL` /
+    `<PREFIX>_URL` variable is picked up automatically.
+  * `MONGODB_DB` — optional, defaults to `admission_companion`.
 * MongoDB Atlas → Network Access must allow Vercel.
 * Enable Web Analytics in the Vercel dashboard (the script tag is already in `index.html`).
 * Node.js 20 or newer.

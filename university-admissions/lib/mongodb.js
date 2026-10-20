@@ -8,11 +8,24 @@ export function useDatabase(db) {
   root.__campusTestDb = db;
 }
 
+/**
+ * The connection string. MONGODB_URI is preferred, but the Vercel ↔ MongoDB Atlas
+ * integration may name it MONGODB_URL / STORAGE_URL / <PREFIX>_URL, so any
+ * variable holding a mongodb:// or mongodb+srv:// string is accepted.
+ */
+export function mongoUri(env = process.env) {
+  for (const key of ['MONGODB_URI', 'MONGODB_URL', 'MONGO_URL', 'STORAGE_URL', 'DATABASE_URL']) {
+    if (/^mongodb(\+srv)?:\/\//.test(env[key] || '')) return env[key];
+  }
+  const key = Object.keys(env).sort().find(k => /(_URI|_URL)$/.test(k) && /^mongodb(\+srv)?:\/\//.test(env[k] || ''));
+  return key ? env[key] : '';
+}
+
 /** Shared MongoDB client for warm Vercel function instances. */
 export async function getDatabase() {
   if (root.__campusTestDb) return root.__campusTestDb;
-  const uri = process.env.MONGODB_URI;
-  if (!uri) throw new Error('MONGODB_URI is not configured');
+  const uri = mongoUri();
+  if (!uri) throw new Error('MongoDB connection string is not configured (set MONGODB_URI)');
 
   if (!root.__campusMongoClientPromise) {
     const client = new MongoClient(uri, {

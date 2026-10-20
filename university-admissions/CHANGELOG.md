@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.3 — easier database setup
+* The API finds the MongoDB connection string whether it is named
+  `MONGODB_URI`, `MONGODB_URL`, `STORAGE_URL` or `<PREFIX>_URL` (Vercel's
+  MongoDB Atlas integration), so no manual renaming is needed.
+
 ## 2.0.2 — new header photo
 * The CU main gate photo is the header on the home and CU pages: responsive
   480/768/1113 px WebP (27–72 KB instead of 109 KB), preloaded, with an
