@@ -387,8 +387,8 @@ body[data-route='play'] { padding-bottom: env(safe-area-inset-bottom, 0px); }
 .pick { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 14px; border: 2px solid var(--line); background: var(--surface); cursor: pointer; transition: border-color .15s, background .15s; }
 .pick input { position: absolute; opacity: 0; pointer-events: none; }
 .pick:hover { border-color: color-mix(in srgb, var(--tone, var(--brand)) 60%, var(--line)); }
-.pick:has(input:checked) { border-color: var(--tone, var(--brand)); background: color-mix(in srgb, var(--tone, var(--brand)) 9%, var(--surface)); }
-.pick:has(input:checked)::after { content: '✓'; position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--tone, var(--brand)); color: #fff; font-size: .8rem; font-weight: 800; }
+.pick.is-checked { border-color: var(--tone, var(--brand)); background: color-mix(in srgb, var(--tone, var(--brand)) 9%, var(--surface)); }
+.pick.is-checked::after { content: '✓'; position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--tone, var(--brand)); color: #fff; font-size: .8rem; font-weight: 800; }
 .pick:has(input:focus-visible) { outline: 3px solid var(--accent); }
 .pick:has(input:disabled) { opacity: .45; cursor: not-allowed; }
 .pick-icon { font-size: 1.5rem; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: color-mix(in srgb, var(--tone, var(--brand)) 13%, transparent); }
@@ -613,3 +613,19 @@ body.palette-open::after { content: ''; position: fixed; inset: 0; background: r
 @media (min-width: 960px) {
   .with-palette .play-main { max-width: none; margin: 0; }
 }
+
+/* exam: clear a chosen answer */
+.clear-btn { display: block; margin: 12px 0 0 auto; font-size: .88rem; color: var(--muted); }
+
+/* older browsers without color-mix(): keep surfaces solid */
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+  .site-header, .play-top { background: var(--bg); }
+  .bottom-nav { background: var(--surface); }
+  .topic-icon, .pick-icon { background: var(--surface-2); }
+  .pick.is-checked { background: var(--brand-soft); }
+  .notice { border-color: var(--line); }
+}
+
+/* jump links land below the sticky header + section tabs */
+.profile section { scroll-margin-top: calc(var(--header-h) + 64px); }
+@media (min-width: 960px) { .profile section { scroll-margin-top: calc(var(--header-h) + 16px); } }

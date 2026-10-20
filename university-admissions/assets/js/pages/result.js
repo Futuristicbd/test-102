@@ -76,7 +76,7 @@ export function render([id]) {
   const [title, line] = verdict(pct);
   const answers = h.answers || [];
   const wrongIds = answers.filter(a => { const q = QUESTION_MAP.get(a.id); return q && a.choice !== q.a; }).map(a => a.id);
-  const ring = h.mode === 'fun' ? scoreRing(pct, bn(h.score), 'points') : h.mode === 'exam' ? scoreRing(h.percent, `${bn(h.percent)}%`, `${bn(h.marks)} নম্বর`) : scoreRing(pct, `${bn(pct)}%`, 'সঠিক');
+  const ring = h.mode === 'fun' ? scoreRing(pct, bn(h.score), 'points') : h.mode === 'exam' ? scoreRing(h.percent, `${bn(h.percent)}%`, h.marks === undefined ? 'নম্বর' : `${bn(h.marks)} নম্বর`) : scoreRing(pct, `${bn(pct)}%`, 'সঠিক');
   const counts = { right: h.correct, wrong: h.wrong, skip: h.skipped, flag: answers.filter(a => a.flag).length };
 
   return `<div class="container">

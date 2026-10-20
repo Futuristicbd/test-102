@@ -76,8 +76,7 @@ export function answer(choice) {
   if (!q) return null;
   if (s.mode === 'exam') {
     if (Date.now() >= s.deadline) { finish({ auto: true }); return null; }
-    s.answers[q.id] = s.answers[q.id] === choice ? undefined : choice; // tap again to clear
-    if (s.answers[q.id] === undefined) delete s.answers[q.id];
+    s.answers[q.id] = choice;
     save();
     return { correct: null };
   }
@@ -133,6 +132,14 @@ export function go(index) {
   save();
 }
 
+export function clearAnswer() {
+  const s = state.session;
+  const q = currentQuestion(s);
+  if (!q || s.mode !== 'exam') return;
+  delete s.answers[q.id];
+  save();
+}
+
 export function toggleFlag() {
   const s = state.session;
   const q = currentQuestion(s);
@@ -170,6 +177,13 @@ export function finish({ auto = false } = {}) {
   }));
   // A fun round ended early only scores the questions actually reached.
   const reached = s.mode === 'fun' ? answers.slice(0, (s.index || 0) + (isDone(s, qs[s.index]?.id) ? 1 : 0)) : answers;
+  if (s.mode !== 'exam' && !reached.some(a => a.choice >= 0)) {
+    state.session = null;
+    save();
+    toast('কোনো প্রশ্নের উত্তর দেওয়া হয়নি, তাই ফলাফল সংরক্ষণ করা হয়নি।');
+    navigate('#home');
+    return null;
+  }
   const result = scoreAttempt({ mode: s.mode, settings: s.settings, answers: reached }, QUESTION_MAP);
   const finished = Date.now();
   const entry = {

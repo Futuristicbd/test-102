@@ -23,7 +23,7 @@ const MODE_TEXT = {
 
 function topicOption(id, title, sub, count, icon, checked, tone = '') {
   const acc = topicAccuracy(id);
-  return `<label class="pick" style="${tone ? `--tone:${esc(tone)}` : ''}">
+  return `<label class="pick ${checked ? 'is-checked' : ''}" style="${tone ? `--tone:${esc(tone)}` : ''}">
     <input type="radio" name="topic" value="${esc(id)}" ${checked ? 'checked' : ''} ${count ? '' : 'disabled'}>
     <span class="pick-icon" aria-hidden="true">${esc(icon)}</span>
     <span class="pick-text"><b lang="en">${esc(title)}</b><small>${esc(sub)}</small></span>
@@ -113,7 +113,9 @@ export function mount() {
   const form = $('#setup-form');
   if (!form) return;
   form.addEventListener('change', e => {
-    if (e.target.name === 'topic') history.replaceState(null, '', `#start/${form.dataset.mode}/${e.target.value}`);
+    if (e.target.name !== 'topic') return;
+    history.replaceState(null, '', `#start/${form.dataset.mode}/${e.target.value}`);
+    form.querySelectorAll('.pick').forEach(l => l.classList.toggle('is-checked', l.contains(e.target)));
   });
   form.addEventListener('submit', async e => {
     e.preventDefault();

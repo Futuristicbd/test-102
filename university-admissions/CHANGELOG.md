@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.0.1 — review fixes
+* In-page links (university section tabs, "skip to content") no longer open a
+  "page not found" screen; sections land below the sticky header.
+* Model Test: tapping your chosen answer again no longer erases it; use the
+  "উত্তর মুছে ফেলো" link to clear an answer.
+* Quitting a Fun Quiz / Practice before answering anything no longer saves an
+  empty result.
+* Older phone browsers (no `color-mix()` / `:has()`): solid header and tab bar,
+  selected topic still highlighted.
+* Leaderboard topic filter also includes v1 scores saved under topic titles.
+
 ## 2.0.0 — full redesign and restructure
 
 ### New experience

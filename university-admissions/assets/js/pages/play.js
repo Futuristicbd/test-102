@@ -127,6 +127,7 @@ export function render() {
           <h2 class="q-text" lang="en">${esc(q.q)}</h2>
           <div class="opts" role="group" aria-label="উত্তর বাছাই করো">${optionButtons(s, q)}</div>
           ${feedback(s, q)}
+          ${s.mode === 'exam' && quiz.isAnswered(s, q.id) ? '<button class="link-btn clear-btn" data-action="clear">উত্তর মুছে ফেলো</button>' : ''}
         </article>
         <div class="play-nav">${nav}</div>
         ${s.mode !== 'exam' ? `<button class="link-btn end-btn" data-action="end">এখনই শেষ করে ফলাফল দেখো</button>` : ''}
@@ -228,7 +229,7 @@ export function onAction(action, el) {
   switch (action) {
     case 'answer': {
       const r = quiz.answer(Number(el.dataset.choice));
-      if (!r) return refresh();
+      if (!r) return state.session ? refresh() : undefined;
       if (s.mode === 'fun') {
         if (r.correct) {
           beep(r.streak >= 3 ? 'combo' : 'good');
@@ -248,6 +249,7 @@ export function onAction(action, el) {
       document.body.classList.remove('palette-open');
       return refresh();
     case 'flag': quiz.toggleFlag(); return refresh();
+    case 'clear': quiz.clearAnswer(); return refresh();
     case 'palette': document.body.classList.toggle('palette-open'); return;
     case 'submit': return submit();
     case 'life':

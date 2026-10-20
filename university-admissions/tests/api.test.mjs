@@ -83,6 +83,8 @@ test('leaderboard: best score per student, legacy "test" rows count as exam, "me
   assert.equal(mine[0].me, true);
   assert.ok(r.body.rows.some(x => x.name === 'Old Timer' && x.me === false));
   assert.ok(r.body.rows.every(x => !('playerId' in x)));
+  const byTopic = await call(scores, { query: { mode: 'exam', topic: 'tense' } });
+  assert.ok(byTopic.body.rows.some(x => x.name === 'Old Timer'), 'v1 rows saved under the topic title are included');
   const fun = await call(scores, { query: { mode: 'fun', topic: 'tense' } });
   assert.equal(fun.body.rows.length, 1);
 });

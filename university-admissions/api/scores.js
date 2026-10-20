@@ -57,7 +57,8 @@ export function buildEntry(body, student, attemptId) {
 
 export function leaderboardPipeline(mode, topic, limit = 100) {
   const match = { playerId: { $type: 'string' }, score: { $type: 'number' }, mode: mode === 'exam' ? { $in: ['exam', 'test'] } : 'fun' };
-  if (topic !== 'all') match.topic = topic;
+  // v1 stored topic titles ("Tense"); v2 stores ids ("tense").
+  if (topic !== 'all') match.topic = { $in: [topic, TOPICS.find(t => t.id === topic)?.title].filter(Boolean) };
   return [
     { $match: match },
     { $sort: { score: -1, correct: -1, timeSec: 1, at: 1 } },

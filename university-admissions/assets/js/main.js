@@ -74,6 +74,18 @@ window.addEventListener('hashchange', () => {
 });
 
 document.addEventListener('click', e => {
+  // In-page links (#u-location, #main…) scroll instead of being treated as routes.
+  const link = e.target.closest('a[href^="#"]');
+  if (link) {
+    const id = decodeURIComponent(link.getAttribute('href').slice(1));
+    const target = id && !ROUTES[id.split('/')[0]] && !LEGACY[id] && document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (id === 'main') target.focus({ preventScroll: true });
+      return;
+    }
+  }
   const tab = e.target.closest('[data-lb-mode]');
   if (tab) return switchBoardMode(tab);
   const el = e.target.closest('[data-action]');
