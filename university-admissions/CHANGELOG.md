@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.0 — at least 40 questions per topic, live visitors, feedback
+* 146 new TOEFL-style practice questions, each with an English and a Bangla
+  explanation: Hope & Wish 3 → 43, Conditional 15 → 42, Gender 20 → 42,
+  Modal / Causative / Subjunctive 30 → 42, Number 31 → 42, Noun 32 → 42.
+  Bank: 624 questions in 13 topics; every topic has at least 42.
+* Removed a "plural of criterion" question that appeared in both Number and
+  Mixed English; `npm run check` now flags duplicates across topics too.
+* Live visitor count on the home page and footer — only real heartbeats from
+  open tabs (`/api/visitors`, MongoDB). Hidden when the database is not set up.
+* Developer photo and a WhatsApp feedback link in the footer and About page.
+
 ## 2.1.0 — 150 new questions, full answer review, cleaner buttons
 ### Questions
 * 4 new topics: Adverb (60), Modal Verb (30), Causative Verb (30),
