@@ -45,6 +45,7 @@ data/                       ← ALL CONTENT. See CONTENT_GUIDE.md
 api/
   profile.js                Student name/avatar (cookie-based identity)
   scores.js                 Leaderboard: validates answer sheet, recomputes score
+  visitors.js               Live visitor count (heartbeats, no estimates)
 lib/
   mongodb.js                MongoDB connection (Vercel pooled)
   http.js                   Cookie / JSON helpers
@@ -97,6 +98,11 @@ automatically on first request.
   scores are ignored. Submissions are idempotent (`attemptId`) and rate-limited
   (20 per student per 10 minutes).
 * Leaderboard aggregation uses `$$ROOT` (the previous `$ROOT` bug returned empty rows).
+* Live visitors: each open, visible tab sends a heartbeat to `/api/visitors`
+  every 30 s with a random browser id (no name, no IP stored). The badge shows
+  how many different browsers sent one in the last 75 s; closing the tab removes
+  it at once. Rows expire after 10 minutes (TTL index on `presence.at`). If the
+  database is not configured the badge is simply hidden — no made-up numbers.
 * Only topic-based Fun Quiz and Model Test results are ranked; mistakes practice,
   retries and the daily challenge are personal.
 * Local progress (history, mistakes, checklist) never leaves the browser.

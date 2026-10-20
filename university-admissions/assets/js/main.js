@@ -7,6 +7,7 @@ import { SITE } from '../../data/site.js';
 import { $, $$, esc } from './lib/dom.js';
 import { state, save } from './lib/store.js';
 import { fetchProfile } from './lib/api.js';
+import { startLive, paintLive } from './lib/live.js';
 import * as home from './pages/home.js';
 import * as start from './pages/start.js';
 import * as play from './pages/play.js';
@@ -66,6 +67,7 @@ function render(scroll = true) {
   });
   if (scroll) window.scrollTo({ top: 0 });
   page.mount?.(params);
+  paintLive();
 }
 
 window.addEventListener('hashchange', () => {
@@ -171,3 +173,4 @@ async function syncProfile() {
 
 render(false);
 syncProfile();
+startLive();

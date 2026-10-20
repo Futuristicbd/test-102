@@ -51,7 +51,8 @@ export async function getDatabase() {
       db.collection('scoreAttempts').createIndex({ playerId: 1, score: -1, correct: -1, timeSec: 1 }),
       db.collection('scoreAttempts').createIndex({ attemptId: 1 }, { unique: true, sparse: true }),
       db.collection('scoreAttempts').createIndex({ at: -1 }),
-      db.collection('scoreAttempts').createIndex({ mode: 1, topic: 1, score: -1 })
+      db.collection('scoreAttempts').createIndex({ mode: 1, topic: 1, score: -1 }),
+      db.collection('presence').createIndex({ at: 1 }, { expireAfterSeconds: 600 })
     ]).catch(error => {
       delete root.__campusMongoIndexesPromise;
       throw error;

@@ -46,7 +46,7 @@ export const aboutPage = {
         <h2>কার জন্য?</h2>
         <p>বিশ্ববিদ্যালয় ভর্তি পরীক্ষার্থীদের জন্য একটি free practice platform—বিশেষ করে যারা চট্টগ্রাম বিশ্ববিদ্যালয়ের স্বপ্ন দেখে। এখানে ${bn(QUESTIONS.length)}টি English MCQ, ${bn(TOPICS.length)}টি topic, ব্যাখ্যা ও সহজ বাংলা নোট রয়েছে, আর নিয়মিত নতুন প্রশ্ন যোগ হচ্ছে।</p>
         <h2>প্রশ্নের উৎস</h2>
-        <p>প্রতিটি প্রশ্নে source label (যেমন “CU A Unit 2016–17”) রাখা আছে। কিছু প্রশ্ন বিগত বছরের, কিছু adapted, কিছু সাধারণ practice-এর জন্য তৈরি। Source label থাকলেই সেটি সম্পূর্ণ official প্রশ্নপত্র—এমন দাবি করা হচ্ছে না। কোনো উত্তরে ভুল পেলে আমাদের জানাও।</p>
+        <p>প্রতিটি প্রশ্নে source label (যেমন “CU A Unit 2016–17”) রাখা আছে। কিছু প্রশ্ন বিগত বছরের, কিছু adapted, কিছু সাধারণ practice-এর জন্য তৈরি। Source label থাকলেই সেটি সম্পূর্ণ official প্রশ্নপত্র—এমন দাবি করা হচ্ছে না। কোনো উত্তরে ভুল পেলে নিচের WhatsApp link-এ জানাও।</p>
         <h2>তথ্যের নির্ভরযোগ্যতা</h2>
         <p>Admission-এর তারিখ, fee, যোগ্যতা বা আসন সংখ্যার জন্য সংশ্লিষ্ট বিশ্ববিদ্যালয়ের বর্তমান official circular-ই চূড়ান্ত। এই site কোনো বিশ্ববিদ্যালয়ের official website নয়। Content সর্বশেষ যাচাই: ${bnDate(CONTENT_UPDATED)}।</p>
         <h2>Privacy</h2>
@@ -57,7 +57,10 @@ export const aboutPage = {
         <ul>${CU_PHOTOS.map(p => `<li>${esc(p.caption)} — ${p.creditUrl ? ext(p.creditUrl, p.credit) : esc(p.credit)}</li>`).join('')}</ul>
         <p class="muted small">Wikimedia Commons-এর ছবিগুলো তাদের নিজ নিজ licence (সাধারণত CC BY-SA) অনুযায়ী ব্যবহৃত; বিস্তারিত file page-এ।</p>
         <h2>উদ্যোগ</h2>
-        <p>Initiative by <b>${esc(SITE.initiative)}</b> · Developed by ${ext(SITE.developer.url, SITE.developer.name)}</p>
+        <div class="dev-credit"><img src="${esc(SITE.developer.photo)}" width="44" height="44" alt="${esc(SITE.developer.name)}" loading="lazy" decoding="async">
+          <p>Initiative by <b>${esc(SITE.initiative)}</b><br>Developed by ${ext(SITE.developer.url, SITE.developer.name)}</p></div>
+        <h2>Feedback</h2>
+        <p>কোনো উত্তরে ভুল পেলে, নতুন প্রশ্ন বা topic চাইলে সরাসরি WhatsApp-এ জানাও: ${ext(SITE.feedback, 'WhatsApp-এ message পাঠাও')}</p>
       </div>
     </div>`;
   },
