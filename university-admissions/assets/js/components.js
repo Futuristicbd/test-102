@@ -66,7 +66,7 @@ export function hydratePhotos(root = document) {
 
 /** Full-bleed header image with an instant blurred placeholder behind it. */
 export function heroMedia(p) {
-  return `<div class="hero-media" style="background-image:url('${p.placeholder}')">${photo(p, { cls: 'hero-img', eager: true, sizes: '100vw' })}</div>`;
+  return `<figure class="hero-photo" style="background-image:url('${p.placeholder}')">${photo(p, { eager: true, sizes: '(min-width: 900px) 560px, 100vw' })}${p.credit ? `<figcaption>${credit(p)}</figcaption>` : ''}</figure>`;
 }
 
 export function credit(p) {

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.1 — sharper header, cleaner footer
+* Header: the CU gate photo is shown as a framed picture next to the headline
+  on desktop (at its real resolution, so no more blurry stretched background);
+  phones show it above the text. Same on the CU page.
+* Footer: readable tagline, developer card (photo, name, initiative), green
+  WhatsApp feedback button and the live visitor count side by side.
+
 ## 2.2.0 — at least 40 questions per topic, live visitors, feedback
 * 146 new TOEFL-style practice questions, each with an English and a Bangla
   explanation: Hope & Wish 3 → 43, Conditional 15 → 42, Gender 20 → 42,

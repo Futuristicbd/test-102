@@ -89,14 +89,15 @@ function details(u) {
 function cuPage(u) {
   const story = u.campusStory;
   return `<section class="hero hero-sm">
-      ${heroMedia(CU_HERO)}
-      <div class="container hero-inner">
+      <div class="container hero-grid">
+      <div class="hero-inner">
         <nav class="crumbs light"><a href="#home">হোম</a> / <a href="#universities">বিশ্ববিদ্যালয়</a> / CU</nav>
         <span class="eyebrow light">তোমার পরের ঠিকানা</span>
         <h1>পাহাড়ের পাশে,<br>নতুন জীবনের শুরু।</h1>
         <p>${esc(u.name)} · <span lang="en">${esc(u.english)}</span></p>
       </div>
-      <span class="hero-credit">${credit(CU_HERO)}</span>
+      ${heroMedia(CU_HERO)}
+      </div>
     </section>
     <div class="container">
       <div class="cu-facts lifted">${story.facts.map(([h, t]) => `<div><small lang="en">${esc(h)}</small><b>${esc(t)}</b></div>`).join('')}</div>

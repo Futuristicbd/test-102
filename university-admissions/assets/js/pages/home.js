@@ -93,8 +93,8 @@ export function render() {
   const name = state.player?.name;
   return `
   <section class="hero">
-    ${heroMedia(hero)}
-    <div class="container hero-inner">
+    <div class="container hero-grid">
+    <div class="hero-inner">
       <span class="eyebrow light">${esc(SITE.initiative)}</span>
       <h1>${name ? `${esc(name.split(' ')[0])}, ` : ''}স্বপ্নের ক্যাম্পাসের<br>প্রস্তুতি শুরু হোক আজ।</h1>
       <p>বিশ্ববিদ্যালয় ভর্তি পরীক্ষার English MCQ—খেলার মতো মজায়, পরীক্ষার মতো নিয়মে। প্রতিটি উত্তরের সঙ্গে সহজ বাংলা ব্যাখ্যা।</p>
@@ -109,7 +109,8 @@ export function render() {
       </ul>
       <p class="live-pill" data-live hidden><i aria-hidden="true"></i><b></b> জন এখন অনলাইনে</p>
     </div>
-    <span class="hero-credit">${credit(hero)}</span>
+    ${heroMedia(hero)}
+    </div>
   </section>
   ${resumeBanner()}
   ${daily()}
